@@ -1,0 +1,5 @@
+#!/bin/sh
+VARS='$DB_PASSWORD'
+CONFDIR=/usr/share/webapps/zabbix/conf
+envsubst "$VARS" < "$CONFDIR/zabbix.conf.os" > "$CONFDIR/zabbix.conf.php"
+lighttpd -f /etc/lighttpd/lighttpd.conf -D
